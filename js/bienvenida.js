@@ -29,7 +29,7 @@ if (seleccion1 == "1" || seleccion1 == "si") {
     }
 } else {
     alert("¡Perfecto! continue con su compra.");
-}; 
+};
 class seguro {
     constructor(id, nombre, precio, categoria) {
         this.id = Number(id);
@@ -83,7 +83,7 @@ let agregarSeguro = () => {
     if (confirm("¿Desea contratar otro seguro?")) {
         agregarSeguro()
     } else {
-        alert("Su total es de $ " + totalSeguros())
+        alert("Su total es de $ " + totalSeguros()+ "su pedido es: " +carrito[1]+".")
     }
 }
 
