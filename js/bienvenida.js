@@ -77,13 +77,13 @@ let agregarSeguro = () => {
                 seguroElegido = "salir";
                 break
             default:
-                seguroElegido = prompt("Ingrese el seguro que desea contratar: \n1- R. Civil Moto \n2- R. Civil Auto\n3- R. Civil Taxi - Remis\n4- Area protegida");
+                seguroElegido = prompt("Por favor ingresa un valor correcto, del seguro que desea contratar: \n1- R. Civil Moto \n2- R. Civil Auto\n3- R. Civil Taxi - Remis\n4- Area protegida");
         }
     }
     if (confirm("¿Desea contratar otro seguro?")) {
         agregarSeguro()
     } else {
-        alert("Su total es de $ " + totalSeguros()+ "su pedido es: " +carrito[1]+".")
+        alert("Su total es de $ " + totalSeguros()+".")
     }
 }
 
