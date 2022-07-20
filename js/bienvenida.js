@@ -29,7 +29,7 @@ if (seleccion1 == "1" || seleccion1 == "si") {
     }
 } else {
     alert("¡Perfecto! continue con su compra.");
-};
+}; 
 class seguro {
     constructor(id, nombre, precio, categoria) {
         this.id = Number(id);
@@ -86,7 +86,20 @@ let agregarSeguro = () => {
         alert("Su total es de $ " + totalSeguros()+".")
     }
 }
+const eliminarProducto = () => {
+    let productoEliminar = prompt("Si desea eliminar un producto, ingrese el codigo del producto: \n1 - R.C. Moto \n2 - R.C. Auto\n3 - R.C. Taxi\n4 - Area Protegida ")
 
+    let num = 0;
+    carrito.forEach((seguro) => {
+
+        if (seguro.id == productoEliminar) {
+            carrito.splice(num, 1);
+            num += 1;
+        } else {
+            num += 1;
+        }
+    })
+}
 
 const totalSeguros = () => {
     let sumaTotal = 0;
@@ -96,10 +109,15 @@ const totalSeguros = () => {
     return sumaTotal;
 }
 
-agregarSeguro()
-
+agregarSeguro();
+eliminarProducto();
+alert ("Su total actualizado es de $ " + totalSeguros())
 
 for (let i = 0; i< carrito.length; i++){
     console.log(carrito[i]);
+} 
+for (seguro of carrito) {
+    let nombreCobertura = (seguro.id + " - " + seguro.nombre + " $" + seguro.precio + ", ");
+    console.log(nombreCobertura)
+    document.write(nombreCobertura)
 }
-
